@@ -33,7 +33,8 @@ export default `
             <div class="mt-2">
                 <label class="form-label">Amount</label>
                 <Field v-slot="{ field }" name="amount">
-                    <TheNumberInput v-bind="field" class="form-control resize-none" prefix="$ " :minimumFractionDigits="2" :precision="2" :min="0" />
+                    <TheNumberInput v-bind="field" class="form-control resize-none" prefix="$ "
+                        :minimumFractionDigits="2" :precision="2" :min="0" />
                 </Field>
             </div>
 
@@ -42,6 +43,14 @@ export default `
                 <Field v-slot="{ field }" name="tags">
                     <VueformMultiselect mode="tags" v-bind="field" :searchable="true"
                         :options="[{label: 'Label 1', value: 'label1'}, {label: 'Label 2', value: 'label2'}, {label: 'Label 3', value: 'label3'}]" />
+                </Field>
+            </div>
+
+            <div class="mt-2">
+                <label class="form-label">Packaging Date</label>
+                <Field v-slot="{ field }" name="packagingDate">
+                    {{field}}
+                    <TheFlatPickr v-bind="field" />
                 </Field>
             </div>
 

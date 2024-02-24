@@ -5,6 +5,7 @@ const { useRouter } = VueRouter;
 
 import TheNumberInput from '../../../../libraries/custom-number-input.js'
 import VueformMultiselect from '../../../../libraries/multiselect@2.6.6.js'
+import TheFlatPickr from '../../../common/flatpickr/TheFlatPickr.js';
 
 export default {
     name: 'Add',
@@ -13,6 +14,7 @@ export default {
         'ErrorMessage': ErrorMessage,
         'TheNumberInput': TheNumberInput,
         'VueformMultiselect': VueformMultiselect,
+        TheFlatPickr: TheFlatPickr,
     },
     setup() {
         const { handleSubmit, isSubmitting } = useForm();
