@@ -1,7 +1,7 @@
 export default `
-<div class="row justify-content-center m-4">
+<div class="row justify-content-center m-4" v-loader="isLoading">
     <div class="col-sm-5">
-        <h3 class="text-center">Add Product</h3>
+        <h3 class="text-center">Edit Product</h3>
         <form @submit="handleAddProduct">
             <div class="mt-2">
                 <label for="name" class="form-label">Name</label>
@@ -33,7 +33,8 @@ export default `
             <div class="mt-2">
                 <label class="form-label">Amount</label>
                 <Field v-slot="{ field }" name="amount">
-                    <TheNumberInput v-bind="field" class="form-control resize-none" prefix="$ " :minimumFractionDigits="2" :precision="2" :min="0" />
+                    <TheNumberInput v-bind="field" class="form-control resize-none" prefix="$ "
+                        :minimumFractionDigits="2" :precision="2" :min="0" />
                 </Field>
             </div>
 
@@ -46,7 +47,7 @@ export default `
             </div>
 
             <div class="mt-4 text-center">
-                <button type="submit" class="btn btn-primary px-3" :disabled='isSubmitting'>Add Product</button>
+                <button type="submit" class="btn btn-primary px-3" :disabled='isSubmitting'>Update Product</button>
             </div>
         </form>
     </div>

@@ -1,13 +1,18 @@
 import template from './Add.template.js'
 import { getAuthHeader } from "../../../../utils/authentication.util.js";
-const { useForm, Field, ErrorMessage } = VeeValidate
-const { useRouter } = VueRouter
+const { useForm, Field, ErrorMessage } = VeeValidate;
+const { useRouter } = VueRouter;
+
+import TheNumberInput from '../../../../libraries/custom-number-input.js'
+import VueformMultiselect from '../../../../libraries/multiselect@2.6.6.js'
 
 export default {
     name: 'Add',
     components: {
-        'v-field': Field,
-        'error-message': ErrorMessage,
+        'Field': Field,
+        'ErrorMessage': ErrorMessage,
+        'TheNumberInput': TheNumberInput,
+        'VueformMultiselect': VueformMultiselect,
     },
     setup() {
         const { handleSubmit, isSubmitting } = useForm();

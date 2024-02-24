@@ -12,5 +12,6 @@ router.post('/session', checkUserAuthentication, AuthenticationController.sessio
 router.get('/products', checkUserAuthentication, ProductController.getProducts)
 router.get('/products/:id', checkUserAuthentication, ProductController.getProductById)
 router.post('/products', checkUserAuthentication, ProductController.addProduct)
+router.put('/products/:id', checkUserAuthentication, ProductController.updateProductById)
 
 module.exports = router

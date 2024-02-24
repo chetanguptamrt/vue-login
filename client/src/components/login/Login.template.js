@@ -6,14 +6,14 @@ export default `
             <div class="mt-2">
                 <label for="registrationEmail" class="form-label">Email address</label>
                 <v-field type="text" as='input' name='email' :rules="{required: true, email: true}"
-                    validateOnInput="true" class="form-control" id="registrationEmail" />
+                    :validateOnInput="true" class="form-control" id="registrationEmail" />
             </div>
             <small><error-message name="email" class="text-danger" /></small>
 
             <div class="mt-2">
                 <label for="registrationPassword" class="form-label">Password</label>
                 <v-field type="password" as='input' name='password' class="form-control" :rules="{required: true}"
-                    validateOnInput="true" id="registrationPassword" />
+                    :validateOnInput="true" id="registrationPassword" />
             </div>
             <small><error-message name="password" class="text-danger" /></small>
 

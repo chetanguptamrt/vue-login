@@ -1,5 +1,7 @@
 import appTemplate from "./app.template.js";
 import TheHeader from './components/common/header/TheHeader.js';
+import InfiniteScroll from "./components/common/infinite-scroll/InfiniteScroll.js";
+import Loader from "./components/common/loader/Loader.js";
 import TheNavbar from "./components/common/navbar/TheNavbar.js";
 import routes from './routes.js';
 import store from './store.js';
@@ -45,6 +47,9 @@ const app = Vue
         template: appTemplate
     })
 
+app.directive('infinite-scroll', InfiniteScroll)
+app.directive('loader', Loader)
+
 const router = VueRouter.createRouter({
     history: VueRouter.createWebHistory(),
     routes: routes,
@@ -62,8 +67,6 @@ router.beforeEach((to, from) => {
         }
     }
 })
-console.log(app.component('TodoDeleteButton', {template: 'sd'}))
-
 
 axios.interceptors.response.use(
     response => response,

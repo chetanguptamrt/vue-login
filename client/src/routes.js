@@ -6,6 +6,7 @@ const About = () => import('./components/user/about/About.js')
 const Contact = () => import('./components/user/contact/Contact.js')
 const Products = () => import('./components/user/products/Products.js')
 const AddProduct = () => import('./components/user/products/add/Add.js')
+const EditProduct = () => import('./components/user/products/edit/Edit.js')
 const ViewProduct = () => import('./components/user/products/view/View.js')
 const Logout = () => import('./components/logout/Logout.js')
 
@@ -18,6 +19,7 @@ export default [
     { path: '/contact', name: 'Contact', component: Contact, meta: { requiredAuth: true } },
     { path: '/products', name: 'Products', component: Products, meta: { requiredAuth: true } },
     { path: '/products/add', name: 'AddProducts', component: AddProduct, meta: { requiredAuth: true } },
+    { path: '/products/edit/:id', name: 'EditProducts', component: EditProduct, meta: { requiredAuth: true } },
     { path: '/products/:id', name: 'ViewProduct', component: ViewProduct, meta: { requiredAuth: true } },
     { path: '/logout', name: 'Logout', component: Logout },
     { path: '/:pathMatch(.*)*', name: 'Error404', component: { template: '404' } },
